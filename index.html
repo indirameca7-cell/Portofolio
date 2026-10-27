@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indira Meca | Portofolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --navy: #071a38;
+            --blue: #1264db;
+            --light-blue: #55c7ff;
+            --white: #ffffff;
+            --text: #334155;
+            --background: #f4f8ff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: var(--navy);
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        section {
+            padding: 85px 25px;
+            scroll-margin-top: 70px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--navy);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            color: #64748b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 20%,
+                rgba(37, 139, 255, 0.4), transparent 35%),
+                linear-gradient(120deg, #06132d, #083b80, #071a38);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .welcome {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--light-blue);
+        }
+
+        .hero p {
+            color: #dbeafe;
+            margin-bottom: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 9px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-right: 8px;
+        }
+
+        .button-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .button-outline {
+            border: 1px solid #b8d9ff;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .profile-card {
+            padding: 35px 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .profile-circle {
+            width: 115px;
+            height: 115px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffffff, #71caff);
+            color: #083b80;
+            font-size: 35px;
+            font-weight: bold;
+            box-shadow: 0 0 25px rgba(85,199,255,0.25);
+        }
+
+        .profile-card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(34,197,94,0.16);
+            color: #a7f3d0;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* ABOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .about-mark {
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #dbeafe, #93c5fd);
+            border-radius: 22px;
+            color: #0c3b78;
+            font-size: 75px;
+            font-weight: bold;
+        }
+
+        .about-text h3 {
+            color: var(--navy);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .info-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 9px;
+        }
+
+        .info-list strong {
+            color: var(--navy);
+        }
+
+        /* SKILLS */
+        .skills {
+            background: #eaf2ff;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1eaff;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(15, 50, 100, 0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 50, 100, 0.12);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 12px;
+        }
+
+        /* GALLERY */
+        .gallery-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .gallery-art {
+            min-height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0b3d91, #55c7ff);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .gallery-info {
+            padding: 23px;
+        }
+
+        .gallery-info p {
+            font-size: 14px;
+        }
+
+        /* ACHIEVEMENT */
+        .achievement {
+            background: #eaf2ff;
+        }
+
+        .achievement-item {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid var(--blue);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(15, 50, 100, 0.05);
+        }
+
+        .achievement-item h3 {
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .achievement-item p {
+            color: #64748b;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            border-radius: 22px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 35px rgba(15, 50, 100, 0.08);
+        }
+
+        .email-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 13px 20px;
+            background: #eaf2ff;
+            color: #124db0;
+            border-radius: 10px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--navy);
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">IM<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">What I Can Do</a>
+                <a href="#gallery">Work Gallery</a>
+                <a href="#achievement">Achievement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <div>
+                    <span class="welcome">WELCOME TO MY PORTFOLIO</span>
+
+                    <h1>
+                        Halo, saya<br>
+                        <span>Indira Meca.</span>
+                    </h1>
+
+                    <p>
+                        Mahasiswa Pendidikan Teknologi Informasi
+                        yang sedang belajar, berkembang, dan
+                        mengeksplorasi dunia teknologi serta pendidikan.
+                    </p>
+
+                    <a href="#about" class="button button-primary">
+                        Kenali Saya
+                    </a>
+
+                    <a href="#contact" class="button button-outline">
+                        Hubungi Saya
+                    </a>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-circle">IM</div>
+
+                    <h3>Indira Shelolita Aprilia Meca</h3>
+
+                    <p>Pendidikan Teknologi Informasi</p>
+
+                    <span class="status">
+                        ● Sedang Mengembangkan Diri
+                    </span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about">
+            <div class="container">
+
+                <h2 class="section-title">About Me</h2>
+
+                <p class="section-description">
+                    Mengenal saya lebih dekat.
+                </p>
+
+                <div class="about-content">
+
+                    <div class="about-mark">IM.</div>
+
+                    <div class="about-text">
+                        <h3>Halo! Senang bertemu denganmu.</h3>
+
+                        <p>
+                            Saya Indira Shelolita Aprilia Meca,
+                            mahasiswa Program Studi Pendidikan
+                            Teknologi Informasi. Saya tertarik untuk
+                            mengembangkan kemampuan di bidang teknologi
+                            dan pendidikan.
+                        </p>
+
+                        <p>
+                            Saat ini saya memiliki kemampuan menggunakan
+                            Microsoft Word dan Canva, serta sedang
+                            mempelajari HTML dan CSS untuk membuat website.
+                        </p>
+
+                        <ul class="info-list">
+                            <li>
+                                <strong>Nama:</strong>
+                                Indira Shelolita Aprilia Meca
+                            </li>
+                            <li>
+                                <strong>NIM:</strong> 26050974121
+                            </li>
+                            <li>
+                                <strong>Program Studi:</strong>
+                                Pendidikan Teknologi Informasi
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT I CAN DO -->
+        <section class="skills" id="skills">
+            <div class="container">
+
+                <h2 class="section-title">What I Can Do</h2>
+
+                <p class="section-description">
+                    Beberapa kemampuan yang saya miliki dan sedang
+                    saya kembangkan.
+                </p>
+
+                <div class="card-grid">
+
+                    <div class="card">
+                        <div class="card-icon">📄</div>
+                        <h3>Microsoft Word</h3>
+                        <p>
+                            Menggunakan Microsoft Word untuk membantu
+                            menyusun dan mengatur dokumen.
+                        </p>
+                        <span class="skill-label">Kemampuan</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">🎨</div>
+                        <h3>Canva</h3>
+                        <p>
+                            Membuat desain visual dan materi presentasi
+                            menggunakan Canva.
+                        </p>
+                        <span class="skill-label">Kemampuan</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>HTML & CSS</h3>
+                        <p>
+                            Sedang mempelajari dasar pembuatan halaman
+                            website menggunakan HTML dan CSS.
+                        </p>
+                        <span class="skill-label">Sedang Belajar</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK GALLERY -->
+        <section id="gallery">
+            <div class="container">
+
+                <h2 class="section-title">Work Gallery</h2>
+
+                <p class="section-description">
+                    Area untuk memperkenalkan jenis karya yang ingin
+                    saya tampilkan dalam portofolio.
+                </p>
+
+                <div class="card-grid">
+
+                    <div class="card gallery-card">
+                        <div class="gallery-art">WORD</div>
+                        <div class="gallery-info">
+                            <h3>Dokumen Digital</h3>
+                            <p>
+                                Microsoft Word — area untuk menampilkan
+                                contoh dokumen yang pernah dibuat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card gallery-card">
+                        <div class="gallery-art">CANVA</div>
+                        <div class="gallery-info">
+                            <h3>Desain Visual</h3>
+                            <p>
+                                Canva — area untuk menampilkan desain
+                                atau presentasi yang pernah dibuat.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card gallery-card">
+                        <div class="gallery-art">&lt;/&gt;</div>
+                        <div class="gallery-info">
+                            <h3>Website Portfolio</h3>
+                            <p>
+                                HTML dan CSS — website portofolio ini
+                                menjadi bagian dari proses belajar.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p style="text-align:center; margin-top:25px;">
+                    <em>
+                        Catatan: Tambahkan karya asli kamu jika sudah
+                        tersedia. Bagian ini belum berisi file karya.
+                    </em>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENT -->
+        <section class="achievement" id="achievement">
+            <div class="container">
+
+                <h2 class="section-title">Achievement</h2>
+
+                <p class="section-description">
+                    Pengalaman organisasi yang pernah saya jalani.
+                </p>
+
+                <div class="achievement-item">
+                    <h3>✦ Sekretaris Pramuka</h3>
+                    <p>
+                        Memiliki pengalaman sebagai sekretaris Pramuka
+                        pada waktu SMA.
+                    </p>
+                </div>
+
+                <div class="achievement-item">
+                    <h3>✦ Sekretaris Angkatan</h3>
+                    <p>
+                        Memiliki pengalaman sebagai sekretaris angkatan.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+
+                <h2 class="section-title">Contact Me</h2>
+
+                <p class="section-description">
+                    Silakan hubungi saya melalui email.
+                </p>
+
+                <div class="contact-box">
+                    <div class="card-icon">✉️</div>
+
+                    <h3>Let's Connect!</h3>
+
+                    <p>
+                        Terima kasih sudah mengunjungi portofolio saya.
+                        Saya masih terus belajar dan mengembangkan diri.
+                    </p>
+
+                    <a
+                        class="email-link"
+                        href="mailto:indirameca7@gmail.com"
+                    >
+                        indiraameca7@gmail.com
+                    </a>
+
+                    <br>
+
+                    <a
+                        href="mailto:indirameca7@gmail.com"
+                        class="button button-primary"
+                    >
+                        Kirim Email
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 Indira Shelolita Aprilia Meca.
+            Personal Portfolio.
+        </p>
+    </footer>
+
+</body>
+</html>
